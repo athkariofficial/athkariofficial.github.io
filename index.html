@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أذكاري - قرآن وأذان وأذكار في تطبيق واحد</title>
+<meta name="description" content="أذكاري - قرآن وأذان وأذكار في تطبيق واحد، مجاني بالكامل وبدون إعلانات ويعمل بدون إنترنت.">
+<meta property="og:title" content="أذكاري - قرآن وأذان وأذكار في تطبيق واحد">
+<meta property="og:description" content="مجاني بالكامل وبدون إعلانات ويعمل بدون إنترنت. حمّله من جوجل بلاي.">
+<meta property="og:image" content="shot-1.webp">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;800&family=Noto+Sans+Arabic:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Noto Sans Arabic',sans-serif; background:#f8f4ec; color:#2c2620; direction:rtl; }
+.kufi { font-family:'Noto Kufi Arabic','Noto Sans Arabic',sans-serif; }
+.wrap { max-width:1100px; margin:0 auto; padding:0 20px; }
+.hero { background:linear-gradient(160deg,#0d3b2a,#14523a 60%,#0b3325); color:#f7f1e3; text-align:center; padding:72px 20px 84px; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% -10%,rgba(217,164,65,.22),transparent 55%); pointer-events:none; }
+.hero > * { position:relative; }
+.hero-icon { width:132px; height:132px; border-radius:32px; box-shadow:0 14px 40px rgba(0,0,0,.4); }
+.hero h1 { font-size:64px; font-weight:800; color:#e8b64c; margin-top:22px; }
+.hero .tag { font-size:26px; margin-top:10px; font-weight:600; }
+.hero .sub { font-size:19px; margin-top:12px; color:rgba(247,241,227,.85); }
+.hero .cta { display:inline-block; margin-top:30px; background:#e8b64c; color:#123526; font-size:24px; font-weight:800; padding:18px 44px; border-radius:999px; text-decoration:none; }
+.hero .rating { margin-top:16px; font-size:16px; color:rgba(247,241,227,.7); }
+section { padding:64px 0 8px; }
+h2 { font-size:34px; font-weight:800; color:#123526; margin-bottom:8px; }
+.note { color:#6b6154; font-size:16px; margin-bottom:24px; }
+.gallery { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; }
+.gallery img { width:100%; border-radius:18px; border:2px solid rgba(18,53,38,.15); box-shadow:0 10px 26px rgba(18,53,38,.12); display:block; }
+.features { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+.feature { background:#fff; border:1px solid rgba(18,53,38,.12); border-radius:20px; padding:26px; }
+.feature h3 { font-size:21px; font-weight:700; color:#123526; display:flex; align-items:center; gap:10px; }
+.feature h3::before { content:''; width:11px; height:11px; border-radius:50%; background:#d9a441; flex:none; }
+.feature p { margin-top:10px; font-size:16px; line-height:1.7; color:#4d453a; }
+.news { background:#fff; border:1px solid rgba(18,53,38,.12); border-radius:20px; padding:28px; }
+.news li { font-size:18px; line-height:2; list-style:none; display:flex; gap:12px; align-items:flex-start; }
+.news li::before { content:''; width:10px; height:10px; border-radius:50%; background:#d9a441; margin-top:12px; flex:none; }
+.dl { text-align:center; background:linear-gradient(160deg,#0d3b2a,#14523a); border-radius:28px; color:#f7f1e3; padding:52px 24px; margin-bottom:24px; }
+.dl .key { font-size:24px; font-weight:700; }
+.dl .cta { display:inline-block; margin-top:24px; background:#e8b64c; color:#123526; font-size:22px; font-weight:800; padding:16px 40px; border-radius:999px; text-decoration:none; }
+.dl .facts { display:flex; justify-content:center; gap:48px; margin-top:32px; flex-wrap:wrap; }
+.dl .facts div { font-size:15px; color:rgba(247,241,227,.75); }
+.dl .facts b { display:block; font-size:19px; color:#e8b64c; margin-top:4px; }
+.contact { background:#fff; border:1px solid rgba(18,53,38,.12); border-radius:20px; padding:28px; margin-bottom:24px; }
+.contact p { font-size:17px; line-height:1.8; color:#4d453a; }
+.contact .mail { display:inline-block; margin-top:14px; direction:ltr; background:#f1e9d8; border-radius:12px; padding:12px 22px; font-size:18px; font-weight:700; color:#123526; }
+.callout { background:rgba(217,164,65,.12); border:1px solid rgba(217,164,65,.4); border-radius:14px; padding:16px 20px; margin-top:16px; font-size:15px; line-height:1.7; color:#5c4d2a; }
+.callout b { display:block; color:#123526; margin-bottom:4px; }
+footer { text-align:center; color:#6b6154; font-size:14px; padding:40px 20px 56px; line-height:1.9; }
+@media (max-width:760px) {
+  .gallery { grid-template-columns:repeat(2,1fr); }
+  .features { grid-template-columns:1fr; }
+  .hero h1 { font-size:48px; }
+  h2 { font-size:27px; }
+  .dl .facts { gap:26px; }
+}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img class="hero-icon" src="icon.png" alt="أيقونة تطبيق أذكاري">
+  <h1 class="kufi">أذكاري</h1>
+  <div class="tag">قرآن وأذان وأذكار في تطبيق واحد</div>
+  <div class="sub">مجاني بالكامل • بدون إعلانات • معظم المميزات تعمل بدون إنترنت</div>
+  <a class="cta" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّله مجانًا من جوجل بلاي</a>
+  <div class="rating">التقييم ٤٫٦ من ٥ على جوجل بلاي</div>
+</header>
+
+<main class="wrap">
+<section>
+  <h2>شوف التطبيق من جوّه</h2>
+  <p class="note">لقطات حقيقية من التطبيق على جوجل بلاي.</p>
+  <div class="gallery">
+    <img src="shot-1.webp" alt="الشاشة الرئيسية: أذكارك وصلاتك في مكان واحد" loading="lazy">
+    <img src="shot-2.webp" alt="واجهة الأذان الكاملة حتى والشاشة مقفولة" loading="lazy">
+    <img src="shot-3.webp" alt="المصحف كامل بألوان أحكام التجويد" loading="lazy">
+    <img src="shot-4.webp" alt="تحفيظ القرآن: ردّد ورا الشيخ" loading="lazy">
+    <img src="shot-5.webp" alt="تعليم الصلاة بالحركة والصوت خطوة بخطوة" loading="lazy">
+    <img src="shot-6.webp" alt="أذكار الصباح والمساء بالعدّاد والمصدر" loading="lazy">
+    <img src="shot-7.webp" alt="ويدجت الشاشة الرئيسية بالصلاة الجاية ودرجة الحرارة" loading="lazy">
+    <img src="shot-8.webp" alt="السبحة الإلكترونية بعدّاد محفوظ لكل ذكر" loading="lazy">
+  </div>
+</section>
+
+<section>
+  <h2>كل اللي محتاجه في عبادتك</h2>
+  <div class="features">
+    <div class="feature"><h3>الأذان ومواقيت الصلاة</h3><p>مواقيت دقيقة حسب مدينتك وتتظبط في السفر، واجهة أذان كاملة حتى والشاشة مقفولة، ٦ أصوات أذان، و«ردّد مع المؤذن» جملة بجملة.</p></div>
+    <div class="feature"><h3>المصحف الشريف</h3><p>٦٠٤ صفحات بالرسم العثماني ومصحف ملوّن بأحكام التجويد، ٤ تفاسير، واستماع بصوت ١٢ قارئًا حتى بدون إنترنت.</p></div>
+    <div class="feature"><h3>تحفيظ القرآن</h3><p>ردّد ورا الشيخ والآية تتكرر وتسيب لك وقت تقولها، المنشاوي المعلّم مع الأطفال، واختبر حفظك بإخفاء الآيات.</p></div>
+    <div class="feature"><h3>تعليم الصلاة</h3><p>الصلاة خطوة بخطوة بالحركة والصوت، و«صلِّ معايا» لكل صلاة، والوضوء بالرسم والأخطاء الشائعة بأدلتها.</p></div>
+    <div class="feature"><h3>الأذكار والأدعية</h3><p>أذكار الصباح والمساء وأكثر من ١٢ قسمًا بالمصدر، عدّاد لكل ذكر، والسبحة الإلكترونية بوضع «بعد الصلاة».</p></div>
+    <div class="feature"><h3>الختمات الجماعية</h3><p>اعمل ختمة وشارك رابطها كصدقة جارية، وكل واحد يحجز جزء ويقراه، خاصة برقم سري أو عامة.</p></div>
+    <div class="feature"><h3>ويدجت وأدوات</h3><p>ويدجت الصلاة الجاية ودرجة الحرارة وذكر اليوم والسبحة، القبلة بالبوصلة، والتقويم الهجري، وأسماء الله الحسنى.</p></div>
+    <div class="feature"><h3>تصميم مريح وخصوصية</h3><p>وضع ليلي وألوان متعددة وحجم خط تتحكم فيه. بدون تسجيل وبدون إعلانات، ومعظم المميزات تعمل بدون إنترنت.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>جديد الإصدار ٢٫٣</h2>
+  <div class="news"><ul>
+    <li>التلقين: الشيخ يقرأ وأنت تعيد ويصحّح لك.</li>
+    <li>تابع الإمام: المصحف يقلب مع قراءته.</li>
+    <li>ابحث بصوتك عن أي آية، واسمع صوتك في الكلمة الغلط.</li>
+    <li>خريطة حفظك وخطة حفظ أوتوماتيك، وركن الأطفال وويدجت الحفظ.</li>
+    <li>اختبار بمستويات واختبار صامت.</li>
+    <li>حساب جوجل ونسخة احتياطية تلقائية.</li>
+  </ul></div>
+</section>
+
+<section>
+  <h2 style="text-align:center;margin-bottom:20px;">حمّله دلوقتي</h2>
+  <div class="dl">
+    <div class="key">أذكاري مجاني بالكامل، من غير إعلانات ومن غير تسجيل.</div>
+    <a class="cta" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّل أذكاري من جوجل بلاي</a>
+    <div class="facts">
+      <div>التقييم على جوجل بلاي<b>٤٫٦ من ٥</b></div>
+      <div>آخر تحديث<b>١٧ نوفمبر ٢٠٢٦</b></div>
+      <div>الفئة العمرية<b>مناسب لعمر ٣ أعوام فأكثر</b></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>عندك اقتراح لميزة جديدة؟</h2>
+  <div class="contact">
+    <p>فريق أذكاري بيستقبل اقتراحات المميزات والملاحظات من المستخدمين على البريد الرسمي:</p>
+    <span class="mail">athkariofficial@gmail.com</span>
+    <div class="callout"><b>ملحوظة عن الرد</b>البريد ده جديد والمتابعة مش على مدار الساعة، فممكن الرد يتأخر شوية.</div>
+    <div class="callout"><b>قنواتنا على السوشيال</b>تابع أذكاري على تيك توك: <a href="https://www.tiktok.com/@athkariofficial" style="color:#123526;font-weight:700;">tiktok.com/@athkariofficial</a> — وقنوات يوتيوب وفيسبوك تحت التجهيز، وهتتحدّث الصفحة دي بروابطها أول ما تنطلق.</div>
+  </div>
+</section>
+</main>
+
+<footer>كل المعلومات دي من صفحة أذكاري على جوجل بلاي واتأكدنا منها يوم ٢٥ نوفمبر ٢٠٢٦.<br>مفيش حاجة بتتباع ولا بتتدفع من الصفحة دي.</footer>
+</body>
+</html>
