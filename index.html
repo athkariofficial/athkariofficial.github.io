@@ -4,201 +4,194 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>أذكاري — قرآن وأذان وأذكار في تطبيق واحد</title>
-<meta name="description" content="أذكاري: مصحف وتفسير، أذان ومواقيت صلاة دقيقة، تحفيظ قرآن، تعليم صلاة، وختمات جماعية. مجاني بالكامل وبدون إعلانات.">
-<meta property="og:title" content="أذكاري — قرآن وأذان وأذكار في تطبيق واحد">
-<meta property="og:description" content="مصحف وتفسير، أذان ومواقيت صلاة، تحفيظ قرآن، تعليم صلاة، وختمات جماعية. مجاني بالكامل وبدون إعلانات.">
-<meta property="og:image" content="https://athkariofficial.github.io/shot-1.webp">
-<meta property="og:type" content="website">
 <link rel="icon" type="image/png" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@500;600;700;800;900&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green-950:#0a2a21; --green-900:#0e3529; --green-800:#124232; --green-700:#1a5441;
-  --gold:#e8b64c; --gold-soft:#f3d491; --cream:#f8f4ea; --ink:#1c2420; --muted:#5b6a63;
-  --card-border:#e7e0cf; --radius:18px;
+  --paper:#0c1714; --ink:#f3f0e8; --mut:#9faca5; --line:rgba(255,255,255,.1); --acc:#e8b64c;
+  --green:#123526; --green-soft:rgba(232,182,76,.12); --gold:#e8b64c;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:'Noto Sans Arabic',system-ui,sans-serif;background:var(--cream);color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased}
-h1,h2,h3,.kf{font-family:'Noto Kufi Arabic','Noto Sans Arabic',sans-serif;line-height:1.5}
+body{font-family:'Noto Sans Arabic',sans-serif;background:var(--paper);color:var(--ink);line-height:1.7}
+h1,h2,h3{font-family:'Noto Kufi Arabic',sans-serif}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
-.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-/* ---------- NAV ---------- */
-nav{position:sticky;top:0;z-index:50;background:rgba(248,244,234,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(28,36,32,.08)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px}
+/* nav */
+nav{position:sticky;top:0;z-index:60;background:rgba(12,23,20,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:72px}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{width:42px;height:42px;border-radius:11px;box-shadow:0 3px 10px rgba(10,42,33,.18)}
-.brand span{font-family:'Noto Kufi Arabic';font-weight:700;font-size:22px;color:var(--green-900)}
-.nav-cta{background:var(--green-900);color:#fff;font-weight:600;font-size:15px;padding:10px 22px;border-radius:12px;transition:.2s}
-.nav-cta:hover{background:var(--green-700);transform:translateY(-1px)}
-/* ---------- HERO ---------- */
-.hero{background:linear-gradient(160deg,var(--green-950) 0%,var(--green-800) 60%,var(--green-700) 100%);color:#fff;overflow:hidden;position:relative}
-.hero::before{content:'';position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M36 6l7.8 17.2L61 26l-12.5 12.2L51.4 56 36 47.9 20.6 56l2.9-17.8L11 26l17.2-2.8z' fill='none' stroke='%23e8b64c' stroke-width='1.2'/%3E%3C/svg%3E");background-size:72px 72px}
-.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;padding:96px 24px 112px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(232,182,76,.14);border:1px solid rgba(232,182,76,.35);color:var(--gold-soft);font-size:14px;font-weight:600;padding:7px 16px;border-radius:999px;margin-bottom:26px}
-.eyebrow::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold)}
-.hero h1{font-size:clamp(34px,4.6vw,56px);font-weight:800;line-height:1.35;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:var(--gold)}
-.hero p.sub{font-size:19px;color:rgba(255,255,255,.82);max-width:520px;margin-bottom:36px}
-.cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:34px}
-.btn-gold{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--green-950);font-family:'Noto Kufi Arabic';font-weight:700;font-size:17px;padding:15px 30px;border-radius:14px;transition:.2s;box-shadow:0 8px 24px rgba(232,182,76,.28)}
-.btn-gold:hover{background:var(--gold-soft);transform:translateY(-2px)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.35);color:#fff;font-weight:600;font-size:15px;padding:14px 26px;border-radius:14px;transition:.2s}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
-.rating{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,.75);font-size:14.5px}
-.stars{color:var(--gold);letter-spacing:2px;font-size:16px}
-.hero-phone{display:flex;justify-content:center;position:relative}
-.hero-phone::after{content:'';position:absolute;bottom:-40px;left:50%;transform:translateX(-50%);width:300px;height:300px;background:radial-gradient(circle,rgba(232,182,76,.22),transparent 65%);z-index:0}
-.phone{position:relative;z-index:1;width:272px;border-radius:44px;border:11px solid #0c1210;background:#0c1210;box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 1.5px rgba(255,255,255,.09) inset;overflow:hidden}
-.phone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:86px;height:22px;background:#0c1210;border-radius:12px;z-index:2}
-.phone img{border-radius:33px;width:100%;height:auto}
-/* ---------- SECTIONS ---------- */
-section{padding:96px 0}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 60px}
-.sec-head .tag{display:inline-block;font-size:13.5px;font-weight:700;color:var(--green-700);background:rgba(26,84,65,.08);border:1px solid rgba(26,84,65,.16);padding:5px 16px;border-radius:999px;margin-bottom:16px}
-.sec-head h2{font-size:clamp(26px,3.2vw,38px);font-weight:800;color:var(--green-950);margin-bottom:12px}
-.sec-head p{color:var(--muted);font-size:17px}
-/* trust strip */
-.trust{background:#fff;border-bottom:1px solid var(--card-border);padding:34px 0}
-.trust .wrap{display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
-.trust-item{display:flex;align-items:center;gap:11px;font-weight:600;font-size:15.5px;color:var(--green-900)}
-.trust-item svg{flex:none}
-/* features */
-.features{background:var(--cream)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.card{background:#fff;border:1px solid var(--card-border);border-radius:var(--radius);padding:34px 28px;transition:.25s;position:relative;overflow:hidden}
-.card::before{content:'';position:absolute;top:0;right:0;left:0;height:3px;background:linear-gradient(90deg,var(--gold),transparent);opacity:0;transition:.25s}
-.card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(10,42,33,.10);border-color:rgba(232,182,76,.5)}
-.card:hover::before{opacity:1}
-.card .ic{width:56px;height:56px;border-radius:16px;background:linear-gradient(145deg,var(--green-900),var(--green-700));display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 6px 16px rgba(10,42,33,.22)}
-.card h3{font-size:19px;font-weight:700;color:var(--green-950);margin-bottom:8px}
-.card p{font-size:15px;color:var(--muted)}
+.brand img{width:40px;height:40px;border-radius:11px}
+.brand span{font-family:'Noto Kufi Arabic';font-weight:800;font-size:22px}
+.nav-in{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:600;color:var(--mut)}
+.nav-in a:hover{color:var(--ink)}
+.btn-dark{background:var(--acc);color:#123526;padding:11px 24px;border-radius:999px;font-weight:700;font-size:14.5px;font-family:'Noto Kufi Arabic';transition:.2s}
+.btn-dark:hover{background:#f3d491}
+/* hero */
+.hero{padding:96px 0 30px;text-align:center}
+.pill{display:inline-block;font-size:13.5px;font-weight:700;color:var(--acc);background:var(--green-soft);padding:7px 18px;border-radius:999px;margin-bottom:28px}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:900;line-height:1.35;letter-spacing:-.5px}
+.hero h1 span{color:var(--acc)}
+.hero p{font-size:19px;color:var(--mut);max-width:600px;margin:22px auto 38px}
+.cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:60px}
+.btn-green{background:var(--acc);color:#123526;font-family:'Noto Kufi Arabic';font-weight:700;font-size:16.5px;padding:16px 36px;border-radius:999px;transition:.2s;box-shadow:0 10px 26px rgba(14,75,56,.25)}
+ .dummy-never {transform:translateY(-2px)}
+.btn-line{border:1.5px solid var(--line);color:var(--ink);padding:15px 30px;border-radius:999px;font-weight:600;font-size:15.5px;transition:.2s}
+.btn-line:hover{border-color:var(--ink)}
+/* hero strip */
+.strip{position:relative;padding:10px 0 0;overflow:hidden}
+.strip .row{display:flex;justify-content:center;gap:34px;align-items:flex-end;padding:0 20px}
+.mob{width:250px;border-radius:38px 38px 0 0;border:9px solid #141a17;border-bottom:none;overflow:hidden;background:#141a17;box-shadow:0 -18px 50px rgba(16,22,19,.16)}
+.mob img{border-radius:29px 29px 0 0}
+.mob.c{width:282px;position:relative;z-index:2}
+.mob.l{transform:rotate(-3deg) translateY(14px)}
+.mob.r{transform:rotate(3deg) translateY(14px)}
+/* stats */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#101f19}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);text-align:center}
+.stat{padding:36px 10px;border-inline-start:1px solid var(--line)}
+.stat:first-child{border-inline-start:none}
+.stat b{display:block;font-family:'Noto Kufi Arabic';font-size:30px;font-weight:800;color:var(--acc)}
+.stat span{font-size:14.5px;color:var(--mut);font-weight:600}
+/* sections */
+section{padding:100px 0}
+.head{max-width:640px;margin:0 auto 60px;text-align:center}
+.head .tag{display:inline-block;font-size:13px;font-weight:700;color:var(--acc);background:var(--green-soft);padding:6px 16px;border-radius:999px;margin-bottom:18px}
+.head h2{font-size:clamp(28px,3.4vw,42px);font-weight:900;margin-bottom:12px}
+.head p{color:var(--mut);font-size:17px}
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(180px,auto);gap:20px}
+.bcell{background:#122019;border:1px solid var(--line);border-radius:24px;padding:34px;transition:.25s;overflow:hidden;position:relative}
+.bcell:hover{border-color:#cfccc0;box-shadow:0 16px 40px rgba(16,22,19,.08)}
+.bcell h3{font-size:19px;font-weight:800;margin-bottom:8px}
+.bcell p{font-size:15px;color:var(--mut)}
+.bcell .mini{margin-top:20px;border-radius:18px 18px 0 0;border:7px solid #141a17;border-bottom:none;overflow:hidden;box-shadow:0 10px 24px rgba(16,22,19,.14);max-width:230px;margin-inline:auto}
+.bcell .mini img{border-radius:11px 11px 0 0}
+.b1{grid-column:span 2;grid-row:span 2}
+.b2{grid-column:span 2}
+.b3,.b4{grid-column:span 1}
+.b5{grid-column:span 2}
+.b6{grid-column:span 2}
+.b1 p{font-size:16px}
+.tagline{display:inline-block;font-size:12.5px;font-weight:700;color:var(--gold);margin-bottom:10px}
+/* v23 band */
+.band{background:var(--green);color:#fff;border-radius:30px;padding:60px 56px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.band h2{font-size:clamp(24px,2.8vw,34px);font-weight:900;margin-bottom:12px}
+.band h2 span{color:#f3d491}
+.band .lead{color:rgba(255,255,255,.75);font-size:16px}
+.band ul{list-style:none;display:flex;flex-direction:column;gap:16px}
+.band li{display:flex;gap:12px;align-items:flex-start;font-size:16px;font-weight:600}
+.band li svg{flex:none;margin-top:4px}
 /* gallery */
-.gallery{background:#fff;border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border)}
-.shots{display:grid;grid-auto-flow:column;grid-auto-columns:230px;gap:26px;overflow-x:auto;padding:10px 24px 34px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.shots::-webkit-scrollbar{height:8px}
-.shots::-webkit-scrollbar-thumb{background:#cfc7b2;border-radius:8px}
-.shot{scroll-snap-align:center;border-radius:34px;border:8px solid #0c1210;background:#0c1210;box-shadow:0 14px 30px rgba(10,42,33,.16);overflow:hidden;transition:.25s}
-.shot:hover{transform:translateY(-6px)}
-.shot img{border-radius:26px}
-/* new version */
-.new2 .panel{background:linear-gradient(150deg,var(--green-900),var(--green-700));border-radius:28px;padding:64px 56px;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;position:relative;overflow:hidden}
-.new2 .panel::before{content:'';position:absolute;inset:0;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cpath d='M36 6l7.8 17.2L61 26l-12.5 12.2L51.4 56 36 47.9 20.6 56l2.9-17.8L11 26l17.2-2.8z' fill='none' stroke='%23e8b64c' stroke-width='1.2'/%3E%3C/svg%3E")}
-.new2 h2{font-size:clamp(24px,2.8vw,32px);font-weight:800;margin-bottom:14px;position:relative}
-.new2 h2 span{color:var(--gold)}
-.new2 p.lead{color:rgba(255,255,255,.78);font-size:16.5px;position:relative}
-.new2 ul{list-style:none;position:relative;display:flex;flex-direction:column;gap:18px}
-.new2 li{display:flex;gap:14px;align-items:flex-start;font-size:16.5px;font-weight:600}
-.new2 li svg{flex:none;margin-top:3px}
+.gal .shots{display:grid;grid-auto-flow:column;grid-auto-columns:210px;gap:24px;overflow-x:auto;padding:8px 28px 30px;scroll-snap-type:x mandatory}
+.gal .shots::-webkit-scrollbar{height:6px}
+.gal .shots::-webkit-scrollbar-thumb{background:#2a3a33;border-radius:8px}
+.gal .shot{scroll-snap-align:center;border-radius:30px;overflow:hidden;border:1px solid var(--line);box-shadow:0 12px 28px rgba(0,0,0,.35);transition:.25s}
+.gal .shot:hover{transform:translateY(-6px)}
 /* download */
-.download{text-align:center}
-.download .box{background:#fff;border:1px solid var(--card-border);border-radius:28px;padding:72px 40px;box-shadow:0 20px 50px rgba(10,42,33,.08)}
-.download img.app{width:88px;height:88px;border-radius:22px;margin:0 auto 24px;box-shadow:0 10px 26px rgba(10,42,33,.22)}
-.download h2{font-size:clamp(26px,3vw,36px);font-weight:800;color:var(--green-950);margin-bottom:12px}
-.download p{color:var(--muted);font-size:17px;max-width:520px;margin:0 auto 34px}
-.download .rating{justify-content:center;color:var(--muted);margin-top:26px}
+.dl{text-align:center;padding:40px 0 110px}
+.dl img.app{width:88px;height:88px;border-radius:24px;margin:0 auto 26px;box-shadow:0 14px 34px rgba(0,0,0,.4)}
+.dl h2{font-size:clamp(28px,3.4vw,40px);font-weight:900;margin-bottom:12px}
+.dl p{color:var(--mut);font-size:17px;margin-bottom:36px}
+.dl .rate{margin-top:26px;color:var(--mut);font-size:14.5px}
+.stars{color:var(--gold);letter-spacing:2px}
 /* footer */
-footer{background:var(--green-950);color:rgba(255,255,255,.7);padding:56px 0 40px}
-footer .wrap{display:flex;flex-direction:column;gap:28px}
-.f-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.f-brand{display:flex;align-items:center;gap:12px}
-.f-brand img{width:38px;height:38px;border-radius:10px}
-.f-brand span{font-family:'Noto Kufi Arabic';font-weight:700;font-size:20px;color:#fff}
-.f-links{display:flex;gap:26px;align-items:center;font-size:15px;font-weight:600}
-.f-links a{color:rgba(255,255,255,.75);transition:.2s}
-.f-links a:hover{color:var(--gold)}
-.f-note{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;font-size:13.5px;color:rgba(255,255,255,.45);text-align:center}
-/* responsive */
+footer{border-top:1px solid var(--line);padding:48px 0 36px;background:#0e1a15}
+footer .wrap{display:flex;flex-direction:column;gap:22px}
+.f-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.f-links{display:flex;gap:26px;font-size:14.5px;font-weight:600;color:var(--mut)}
+.f-links a:hover{color:var(--ink)}
+.f-note{border-top:1px solid var(--line);padding-top:20px;text-align:center;font-size:13px;color:#a0a8a3}
 @media(max-width:960px){
-  .hero .wrap{grid-template-columns:1fr;padding:72px 24px 88px;text-align:center}
-  .hero p.sub{margin:0 auto 34px}
-  .cta-row,.rating{justify-content:center}
-  .grid{grid-template-columns:1fr 1fr}
-  .new2 .panel{grid-template-columns:1fr;padding:48px 32px}
+  .bento{grid-template-columns:1fr 1fr}
+  .b1{grid-column:span 2;grid-row:auto}
+  .b2,.b5,.b6{grid-column:span 2}
+  .b3,.b4{grid-column:span 1}
+  .stats .wrap{grid-template-columns:1fr 1fr}
+  .band{grid-template-columns:1fr;padding:46px 32px}
+  .mob.l,.mob.r{display:none}
+  .nav-in a:not(.btn-dark){display:none}
 }
 @media(max-width:600px){
-  .grid{grid-template-columns:1fr}
+  .bento{grid-template-columns:1fr}
+  .b3,.b4,.b2,.b5,.b6{grid-column:span 2}
   section{padding:72px 0}
-  .trust .wrap{gap:22px}
 }
 </style>
 </head>
 <body>
-
 <nav>
   <div class="wrap">
     <a class="brand" href="#"><img src="icon.png" alt="أيقونة تطبيق أذكاري"><span>أذكاري</span></a>
-    <a class="nav-cta" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّل التطبيق</a>
+    <div class="nav-in">
+      <a href="#feat">المميزات</a>
+      <a href="#gal">من داخل التطبيق</a>
+      <a class="btn-dark" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّل التطبيق</a>
+    </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div>
-      <span class="eyebrow">تطبيق إسلامي متكامل</span>
-      <h1>قرآن وأذان وأذكار<br><em>في تطبيق واحد</em></h1>
-      <p class="sub">أذكاري يجمع يومك الإيماني في مكان واحد: المصحف والتفسير، الأذان ومواقيت الصلاة، التحفيظ، تعليم الصلاة، والختمات الجماعية.</p>
-      <div class="cta-row">
-        <a class="btn-gold" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">
-          <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M1 1.8v18.4c0 .6.7 1 1.2.7l9.5-9.2c.4-.4.4-1 0-1.4L2.2 1.1c-.5-.4-1.2 0-1.2.7z" fill="currentColor"/><path d="M14.6 7.2L4.3 1.2l8 7.8 2.3-1.8zM4.3 20.8l10.3-6-2.3-1.8-8 7.8z" fill="currentColor" opacity=".75"/></svg>
-          حمّله مجانًا من جوجل بلاي
-        </a>
-        <a class="btn-ghost" href="#features">استكشف المميزات</a>
-      </div>
+    <span class="pill">تطبيق إسلامي متكامل</span>
+    <h1>قرآن وأذان وأذكار<br><span>في تطبيق واحد</span></h1>
+    <p>المصحف والتفسير، الأذان ومواقيت الصلاة، التحفيظ، تعليم الصلاة، والختمات الجماعية — يومك الإيماني كله في مكان واحد.</p>
+    <div class="cta">
+      <a class="btn-green" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّله مجانًا من جوجل بلاي</a>
+      <a class="btn-line" href="#feat">استكشف المميزات</a>
     </div>
-    <div class="hero-phone">
-      <div class="phone"><img src="shot-1.webp" alt="الشاشة الرئيسية لتطبيق أذكاري"></div>
+  </div>
+  <div class="strip">
+    <div class="row">
+      <div class="mob l"><img src="shot-3.webp" alt="المصحف"></div>
+      <div class="mob c"><img src="shot-1.webp" alt="الشاشة الرئيسية"></div>
+      <div class="mob r"><img src="shot-2.webp" alt="الأذان"></div>
     </div>
   </div>
 </header>
 
-<div class="trust">
+<div class="stats">
   <div class="wrap">
-    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z" stroke="#1a5441" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.4 2.4L15.7 9.5" stroke="#e8b64c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>مجاني بالكامل</div>
-    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#1a5441" stroke-width="1.8"/><path d="M6 6l12 12" stroke="#e8b64c" stroke-width="2" stroke-linecap="round"/></svg>بدون إعلانات</div>
-    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16" stroke="#e8b64c" stroke-width="2" stroke-linecap="round"/><path d="M9 5.5A9.8 9.8 0 0 1 12 5c5 0 8.7 3.4 10 7-.4 1.1-1.1 2.2-2 3.1M6.3 6.9C4.3 8.2 2.8 9.9 2 12c1.3 3.6 5 7 10 7 1.4 0 2.7-.3 3.9-.8" stroke="#1a5441" stroke-width="1.8" stroke-linecap="round"/></svg>بدون تسجيل</div>
-    <div class="trust-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z" stroke="#1a5441" stroke-width="1.8" stroke-linejoin="round"/></svg>معظم المميزات تعمل بدون إنترنت</div>
+    <div class="stat"><b>٢٫٣</b><span>أحدث إصدار</span></div>
+    <div class="stat"><b>١٢</b><span>قارئًا للاستماع</span></div>
+    <div class="stat"><b>٦</b><span>أصوات أذان</span></div>
+    <div class="stat"><b>١٠٠٪</b><span>مجاني وبدون إعلانات</span></div>
   </div>
 </div>
 
-<section class="features" id="features">
+<section id="feat">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="head">
       <span class="tag">المميزات</span>
       <h2>كل ما يحتاجه يومك الإيماني</h2>
       <p>ستة أقسام رئيسية صُممت بعناية، من الفجر إلى النوم.</p>
     </div>
-    <div class="grid">
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3a7 7 0 0 0-7 7c0 2 .7 3.4 1.5 4.6L12 21l5.5-6.4C18.3 13.4 19 12 19 10a7 7 0 0 0-7-7z" stroke="#e8b64c" stroke-width="1.8" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.6" stroke="#e8b64c" stroke-width="1.8"/></svg></div>
+    <div class="bento">
+      <div class="bcell b1">
+        <span class="tagline">الأذان والمواقيت</span>
         <h3>الأذان ومواقيت الصلاة</h3>
-        <p>مواقيت دقيقة حسب مدينتك وتتبط في السفر، ٦ أصوات أذان، و«ردّد مع المؤذن» جملة بجملة.</p>
+        <p>مواقيت دقيقة حسب مدينتك وتتبط في السفر، ٦ أصوات أذان تختار منها، وميزة «ردّد مع المؤذن» جملة بجملة.</p>
+        <div class="mini"><img src="shot-2.webp" alt="واجهة الأذان"></div>
       </div>
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15z" stroke="#e8b64c" stroke-width="1.8" stroke-linejoin="round"/><path d="M20 18v3H6.5" stroke="#e8b64c" stroke-width="1.8" stroke-linecap="round"/><path d="M9 7.5h6M9 11h4" stroke="#e8b64c" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+      <div class="bcell b2">
         <h3>المصحف والتفسير</h3>
         <p>مصحف ملوّن بأحكام التجويد و٤ تفاسير، واستماع بصوت ١٢ قارئًا — ويشتغل بدون إنترنت بعد التحميل.</p>
       </div>
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3a4 4 0 0 1 4 4v3a4 4 0 0 1-8 0V7a4 4 0 0 1 4-4z" stroke="#e8b64c" stroke-width="1.8"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" stroke="#e8b64c" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="bcell b3">
         <h3>تحفيظ القرآن</h3>
-        <p>الآية تتكرر وتسيب لك وقت تقولها، مع اختبار الحفظ بإخفاء الآيات، والمنشاوي المعلّم للأطفال.</p>
+        <p>ردّد ورا الشيخ واختبر حفظك بإخفاء الآيات.</p>
       </div>
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v4M8 21l1.2-6L7 12.5 9 7h6l2 5.5-2.2 2.5L16 21" stroke="#e8b64c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="4.5" r="1.6" stroke="#e8b64c" stroke-width="1.6"/></svg></div>
-        <h3>تعليم الصلاة والوضوء</h3>
-        <p>الصلاة خطوة بخطوة بالحركة والصوت، الوضوء بالرسم، والأخطاء الشائعة بأدلتها.</p>
+      <div class="bcell b4">
+        <h3>تعليم الصلاة</h3>
+        <p>بالحركة والصوت خطوة بخطوة، والوضوء بالرسم.</p>
       </div>
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5.5" r="2" stroke="#e8b64c" stroke-width="1.8"/><circle cx="6.5" cy="10" r="2" stroke="#e8b64c" stroke-width="1.8"/><circle cx="17.5" cy="10" r="2" stroke="#e8b64c" stroke-width="1.8"/><path d="M8.2 11.4c1 2.3 2.2 4 3.8 7.6 1.6-3.6 2.8-5.3 3.8-7.6" stroke="#e8b64c" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="bcell b5">
         <h3>الأذكار والسبحة</h3>
         <p>أذكار الصباح والمساء وأكثر من ١٢ قسمًا بالمصدر، وسبحة إلكترونية بعدّاد محفوظ لكل ذكر.</p>
       </div>
-      <div class="card">
-        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="8" cy="8" r="3" stroke="#e8b64c" stroke-width="1.8"/><circle cx="16.5" cy="9.5" r="2.4" stroke="#e8b64c" stroke-width="1.8"/><path d="M2.5 19c.6-3 2.8-5 5.5-5s4.9 2 5.5 5M13.5 19c.4-2.2 1.8-3.8 3.8-3.8s3 1.4 3.4 3" stroke="#e8b64c" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="bcell b6">
         <h3>الختمات الجماعية</h3>
         <p>اعمل ختمة على روح من تحب وشارك رابطها؛ كل واحد يحجز جزءًا ويقرأه في وقته.</p>
       </div>
@@ -206,67 +199,64 @@ footer .wrap{display:flex;flex-direction:column;gap:28px}
   </div>
 </section>
 
-<section class="gallery">
-  <div class="sec-head" style="padding:0 24px">
+<section class="gal" id="gal" style="padding-top:0">
+  <div class="head" style="padding:0 28px">
     <span class="tag">من داخل التطبيق</span>
     <h2>شوف التطبيق من جوّه</h2>
     <p>لقطات حقيقية من صفحة التطبيق على جوجل بلاي.</p>
   </div>
   <div class="shots">
-    <div class="shot"><img src="shot-1.webp" alt="الشاشة الرئيسية: أذكارك وصلاتك في مكان واحد"></div>
-    <div class="shot"><img src="shot-2.webp" alt="واجهة الأذان الكاملة حتى والشاشة مقفولة"></div>
-    <div class="shot"><img src="shot-3.webp" alt="المصحف كامل بألوان أحكام التجويد"></div>
-    <div class="shot"><img src="shot-4.webp" alt="تحفيظ القرآن: ردّد ورا الشيخ"></div>
-    <div class="shot"><img src="shot-5.webp" alt="تعليم الصلاة بالحركة والصوت خطوة بخطوة"></div>
-    <div class="shot"><img src="shot-6.webp" alt="أذكار الصباح والمساء بالعدّاد والمصدر"></div>
-    <div class="shot"><img src="shot-7.webp" alt="ويدجت الشاشة الرئيسية بالصلاة الجاية"></div>
-    <div class="shot"><img src="shot-8.webp" alt="السبحة الإلكترونية بعدّاد محفوظ لكل ذكر"></div>
+    <div class="shot"><img src="shot-1.webp" alt="الشاشة الرئيسية"></div>
+    <div class="shot"><img src="shot-2.webp" alt="الأذان"></div>
+    <div class="shot"><img src="shot-3.webp" alt="المصحف"></div>
+    <div class="shot"><img src="shot-4.webp" alt="التحفيظ"></div>
+    <div class="shot"><img src="shot-5.webp" alt="تعليم الصلاة"></div>
+    <div class="shot"><img src="shot-6.webp" alt="الأذكار"></div>
+    <div class="shot"><img src="shot-7.webp" alt="الويدجت"></div>
+    <div class="shot"><img src="shot-8.webp" alt="السبحة"></div>
   </div>
 </section>
 
-<section class="new2">
+<section style="padding-top:0">
   <div class="wrap">
-    <div class="panel">
+    <div class="band">
       <div>
         <h2>جديد الإصدار <span>٢٫٣</span></h2>
         <p class="lead">تحديث يركّز على تجربة القراءة والحفظ، بناءً على اقتراحات المستخدمين.</p>
       </div>
       <ul>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e8b64c" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#e8b64c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>التلقين والتصحيح: الشيخ يقرأ وأنت تعيد ويصحّح لك</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e8b64c" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#e8b64c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>تابع الإمام: المصحف يقلب مع قراءته</li>
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#e8b64c" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#e8b64c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>ابحث بصوتك عن أي آية</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f3d491" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#f3d491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>التلقين والتصحيح: الشيخ يقرأ وأنت تعيد ويصحّح لك</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f3d491" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#f3d491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>تابع الإمام: المصحف يقلب مع قراءته</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#f3d491" stroke-width="1.8"/><path d="M8 12.3l2.6 2.6L16.2 9" stroke="#f3d491" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>ابحث بصوتك عن أي آية</li>
       </ul>
     </div>
   </div>
 </section>
 
-<section class="download">
+<section class="dl">
   <div class="wrap">
-    <div class="box">
-      <img class="app" src="icon.png" alt="أيقونة تطبيق أذكاري">
-      <h2>ابدأ يومك مع أذكاري</h2>
-      <p>تحميل مجاني بالكامل، بدون إعلانات وبدون تسجيل.</p>
-      <a class="btn-gold" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">
-        <svg width="20" height="22" viewBox="0 0 20 22" fill="none"><path d="M1 1.8v18.4c0 .6.7 1 1.2.7l9.5-9.2c.4-.4.4-1 0-1.4L2.2 1.1c-.5-.4-1.2 0-1.2.7z" fill="currentColor"/><path d="M14.6 7.2L4.3 1.2l8 7.8 2.3-1.8zM4.3 20.8l10.3-6-2.3-1.8-8 7.8z" fill="currentColor" opacity=".75"/></svg>
-        حمّله من جوجل بلاي
-      </a>
-    </div>
+    <img class="app" src="icon.png" alt="أذكاري">
+    <h2>ابدأ يومك مع أذكاري</h2>
+    <p>مجاني بالكامل • بدون إعلانات • بدون تسجيل • معظم المميزات تعمل بدون إنترنت</p>
+    <a class="btn-green" href="https://play.google.com/store/apps/details?id=com.athkari.athkari">حمّله من جوجل بلاي</a>
+    <div class="rate"><a href="https://play.google.com/store/apps/details?id=com.athkari.athkari" style="color:var(--acc);text-decoration:underline">قيّم أذكاري على جوجل بلاي ↗</a></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="f-top">
-      <div class="f-brand"><img src="icon.png" alt="أذكاري"><span>أذكاري</span></div>
+      <div class="brand"><img src="icon.png" alt="أذكاري"><span style="font-size:19px">أذكاري</span></div>
       <div class="f-links">
         <a href="https://play.google.com/store/apps/details?id=com.athkari.athkari">جوجل بلاي</a>
         <a href="https://www.tiktok.com/@athkariofficial">تيك توك</a>
+        <a href="https://www.youtube.com/@athkariofficial">يوتيوب</a>
+        <a href="https://www.facebook.com/profile.php?id=61596631393416">فيسبوك</a>
         <a href="mailto:athkariofficial@gmail.com">راسلنا</a>
       </div>
     </div>
     <div class="f-note">أذكاري — قرآن وأذان وأذكار في تطبيق واحد. للاقتراحات: athkariofficial@gmail.com (الرد ممكن يتأخر شوية).</div>
   </div>
 </footer>
-
 </body>
 </html>
